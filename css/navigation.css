@@ -1,0 +1,80 @@
+.nav1 {
+	width: 80px;
+	height: 21;
+}
+.nav1 ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	margin-left: 0px;
+	padding-left: 0px;
+	list-style-type: none;
+}
+.nav1 a:link, a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.nav1 a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC9966;
+	text-decoration: none;
+}
+.nav1 a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	background-color: #CC9966;
+}
+.nav1 a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	background-color: #6699CC;
+	display: block;
+	padding: 3px;
+	width: 80px;
+}
+
+.nav {
+	width: 123px;
+	height: 21;
+}
+.nav ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	margin-left: 0px;
+	padding-left: 0px;
+	list-style-type: none;
+}
+.nav a:link, a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.nav a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC9966;
+	text-decoration: none;
+}
+.nav a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	background-color: #CC9966;
+}
+.nav a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	background-color: #6699CC;
+	display: block;
+	padding: 3px;
+	width: 123px;
+}
+
