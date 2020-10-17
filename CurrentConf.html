@@ -1,31 +1,21 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PSWALSB Current and Next Conference Info - Palm Springs, CA</title>
-<link href="src\css\navigation.min.css" rel="stylesheet" type="text/css">
-<link href="src\css\index.min.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-<!--
 
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="src\css\navigation.min.css" rel="stylesheet" type="text/css">
+    <link href="src\css\index.min.css" rel="stylesheet" type="text/css">
+    <title>PSWALSB Current and Next Conference Info - Palm Springs, CA</title>
+  </head>
+  <body>
 
-.BodyText1 {	
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	font-weight: bold;
-	color: #003366;
-}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-.BodyText2 {	
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;  
-	color: #003366;
-}
-
-
--->
-</style>
 
 <script type="text/JavaScript">
 <!--
@@ -174,21 +164,55 @@ function MM_nbGroup(event, grpName) { //v6.0
 
     <script src="https://www.paypal.com/sdk/js?client-id=AUu47CpCevwGzlfZDA3K_4737C-Ygq_fhZM8YJwhPJGDVozkvRzDRUWMkQcQ__xKaidk887gxdZlc-v8"> // Replace YOUR_SB_CLIENT_ID with your sandbox client ID</script>
 
-    <div id="paypal-button-container"></div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons" id="myButtons">
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="virtual" autocomplete="off" checked> Virtual $225.00 
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="person" autocomplete="off"> In-Person $250.00 
+      </label>
+    </div>
+    <div id="paypal-button-container-virtual" style="display: none;"></div>
+    <div id="paypal-button-container-person" style="display: none;"></div>
 
+    
     <!-- Add the checkout buttons, set up the order and approve the order -->
     <script>
+      $("#myButtons :input").change(function() {
+        console.log(this); // points to the clicked input button  
+        var v = "0.0";
+        if ($(this).attr("id") == "virtual") {
+          $("#paypal-button-container-person").hide();
+          $("#paypal-button-container-virtual").show(1000);
+        }else{
+          $("#paypal-button-container-virtual").hide();
+          $("#paypal-button-container-person").show(1000);
+        }
+        
+      });
       paypal.Buttons({
         createOrder: function(data, actions) {
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: '275.00'
+                value: '225.00'
               }
             }]
           });
         }
-      }).render('#paypal-button-container'); 
+      }).render('#paypal-button-container-virtual'); 
+      paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '250.00'
+              }
+            }]
+          });
+        }
+      }).render('#paypal-button-container-person'); 
+      
       // Display payment options on your web page
     </script>
         
@@ -221,5 +245,10 @@ function MM_nbGroup(event, grpName) { //v6.0
 
 <p align="center" class="copyright">Copyright 2020-2021 PACIFIC SOUTHWEST ACADEMY OF LEGAL STUDIES IN BUSINESS</p>
  
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
