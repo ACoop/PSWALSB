@@ -166,10 +166,10 @@ function MM_nbGroup(event, grpName) { //v6.0
 
     <div class="btn-group btn-group-toggle" data-toggle="buttons" id="myButtons">
       <label class="btn btn-secondary">
-        <input type="radio" name="options" id="virtual" autocomplete="off" checked> Virtual $225.00 
+        <input type="radio" name="options" id="virtual" autocomplete="off" checked> Before 12/15 $295.00 
       </label>
-      <label class="btn btn-secondary">
-        <input type="radio" name="options" id="person" autocomplete="off"> In-Person $250.00 
+      <label class="btn btn-secondary disabled">
+        <input type="radio" name="options" id="person" autocomplete="off"  disabled> After 12/15 $345.00 
       </label>
     </div>
     <div id="paypal-button-container-virtual" style="display: none;"></div>
@@ -195,7 +195,7 @@ function MM_nbGroup(event, grpName) { //v6.0
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: '225.00'
+                value: '295.00'
               }
             }]
           });
@@ -206,7 +206,7 @@ function MM_nbGroup(event, grpName) { //v6.0
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: '250.00'
+                value: '345.00'
               }
             }]
           });
