@@ -45,3 +45,38 @@ function MM_preloadImages() { //v3.0
         nbArr[nbArr.length] = img;
     } }
   }
+
+  $("#myButtons :input").change(function() {
+    console.log(this); // points to the clicked input button  
+    var v = "0.0";
+    if ($(this).attr("id") == "virtual") {
+      $("#paypal-button-container-person").hide();
+      $("#paypal-button-container-virtual").show(1000);
+    }else{
+      $("#paypal-button-container-virtual").hide();
+      $("#paypal-button-container-person").show(1000);
+    }
+    
+  });
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '295.00'
+          }
+        }]
+      });
+    }
+  }).render('#paypal-button-container-virtual'); 
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '345.00'
+          }
+        }]
+      });
+    }
+  }).render('#paypal-button-container-person'); 
