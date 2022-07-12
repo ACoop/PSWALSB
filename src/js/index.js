@@ -63,7 +63,7 @@ function MM_preloadImages() { //v3.0
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: '295.00'
+            value: '150.00'
           }
         }]
       });
@@ -74,7 +74,7 @@ function MM_preloadImages() { //v3.0
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: '345.00'
+            value: '200.00'
           }
         }]
       });
